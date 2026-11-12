@@ -51,6 +51,26 @@ func main() {
 	fmt.Println("Currency:", currency)
 	// fmt.Println("*************")
 	// fmt.Println("Total Santim: ", order)
+
+	menu := []string{"ዶሮ ወጥ", "ምሳ አሰራር", "አትክልት አሰራር", "አልጫ ዶሮ", "አይነት", "የተቀለለ እንቁላል"}
+	remaining := 10000
+	servingSantim := 2500
+	done := false
+
+	for i := 0; i < len(menu); i++ {
+		fmt.Println(menu[i])
+	}
+
+	for remaining > 0 {
+		remaining -= servingSantim
+	}
+
+	for {
+		if done {
+			break
+		}
+	}
+
 }
 
 // func main() {
