@@ -2,26 +2,55 @@ package main
 
 import "fmt"
 
-func test(param1 int) (int, string) {
-	var err string
-	if param1%2 != 0 {
-		err = "input is odd"
-	}
-	return param1, err
-}
+// func test(param1 int) (int, string) {
+// 	var err string
+// 	if param1%2 != 0 {
+// 		err = "input is odd"
+// 	}
+// 	return param1, err
+// }
 
 func main() {
 	// _, err := test(100)
 
-	x := 100
-	y := x
+	// x := 100
+	// y := x
 
-	fmt.Println(y)
+	// fmt.Println(y)
 
-	fmt.Println(y)
+	// fmt.Println(y)
 
-	result, err := test(y)
-	fmt.Println("Result:", result, "Error:", err)
+	// result, err := test(y)
+	// fmt.Println("Result:", result, "Error:", err)
+
+	var restaurant string = "Yod Abyssinia"
+	var area = "Bole"
+	var priceSantim int
+
+	courier := "dawit tesfaye"
+	order, revenue := 12, 84500
+
+	var (
+		city     = "Addis Ababa"
+		currency = "ETB"
+	)
+
+	// var order struct {
+	// 	TotalSantim int
+	// 	Paid        bool
+	// 	Note        string
+	// }
+
+	fmt.Println("Restaurant:", restaurant)
+	fmt.Println("Area:", area)
+	fmt.Println("Price in Santim:", priceSantim)
+	fmt.Println("Courier:", courier)
+	fmt.Println("Order:", order)
+	fmt.Println("Revenue:", revenue)
+	fmt.Println("City:", city)
+	fmt.Println("Currency:", currency)
+	// fmt.Println("*************")
+	// fmt.Println("Total Santim: ", order)
 }
 
 // func main() {
