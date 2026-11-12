@@ -52,24 +52,43 @@ func main() {
 	// fmt.Println("*************")
 	// fmt.Println("Total Santim: ", order)
 
-	menu := []string{"ዶሮ ወጥ", "ምሳ አሰራር", "አትክልት አሰራር", "አልጫ ዶሮ", "አይነት", "የተቀለለ እንቁላል"}
-	remaining := 10000
-	servingSantim := 2500
-	done := false
+	// menu := []string{"ዶሮ ወጥ", "ምሳ አሰራር", "አትክልት አሰራር", "አልጫ ዶሮ", "አይነት", "የተቀለለ እንቁላል"}
+	// remaining := 10000
+	// servingSantim := 2500
+	// done := false
 
-	for i := 0; i < len(menu); i++ {
-		fmt.Println(menu[i])
+	// for i := 0; i < len(menu); i++ {
+	// 	fmt.Println(menu[i])
+	// }
+
+	// for remaining > 0 {
+	// 	remaining -= servingSantim
+	// }
+
+	// for {
+	// 	if done {
+	// 		break
+	// 	}
+	// }
+
+	prices := []int{18500, 24000, 12000}
+
+	for i, p := range prices {
+		fmt.Println("%d: %.2f ETB\n", i, float64(p)/100)
 	}
 
-	for remaining > 0 {
-		remaining -= servingSantim
+	fees := map[string]int{
+		"Yod Abyssinia": 4500,
+		"Addis Ababa":   3500,
+		"Bole":          2500,
+	}
+	for area, fee := range fees {
+		fmt.Println(area, fee)
 	}
 
-	for {
-		if done {
-			break
-		}
-	}
+	// for _, p := range prices{
+	// 	subtotal += p
+	// }
 
 }
 
