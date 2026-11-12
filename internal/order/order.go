@@ -45,16 +45,29 @@ func main() {
 	// _, err := strconv.Atoi(input)
 	// for _, dish := range menu { ... }
 
-	var subtotalSantim int = 68500
-	var ratePct float64 = 5
+	// var subtotalSantim int = 68500
+	// var ratePct float64 = 5
 
-	service := int(float64(subtotalSantim) * ratePct / 100)
-	total := subtotalSantim + service
+	// service := int(float64(subtotalSantim) * ratePct / 100)
+	// total := subtotalSantim + service
 
-	fmt.Println(total)
+	// fmt.Println(total)
 
-	var small int32 = 900
-	var big int64 = int64(small)
+	// var small int32 = 900
+	// var big int64 = int64(small)
 
-	fmt.Println(big)
+	// fmt.Println(big)
+
+	dish := "ዶሮ ወጥ"
+
+	fmt.Println(len(dish))
+	fmt.Println(len([]rune(dish)))
+
+	for i, r := range dish {
+		fmt.Printf("%d %c", i, r)
+	}
+
+	// name := "Yod Abyssinia"
+	// fmt.Println(string.ToUpper(name))
+	// fmt.Println(string.HasPrefix("0911223344", "09"))
 }
