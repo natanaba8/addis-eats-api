@@ -71,24 +71,51 @@ func main() {
 	// 	}
 	// }
 
-	prices := []int{18500, 24000, 12000}
+	// prices := []int{18500, 24000, 12000}
 
-	for i, p := range prices {
-		fmt.Println("%d: %.2f ETB\n", i, float64(p)/100)
-	}
+	// for i, p := range prices {
+	// 	fmt.Println("%d: %.2f ETB\n", i, (p)/100)
+	// }
 
-	fees := map[string]int{
-		"Yod Abyssinia": 4500,
-		"Addis Ababa":   3500,
-		"Bole":          2500,
-	}
-	for area, fee := range fees {
-		fmt.Println(area, fee)
-	}
+	// fees := map[string]int{
+	// 	"Yod Abyssinia": 4500,
+	// 	"Addis Ababa":   3500,
+	// 	"Bole":          2500,
+	// }
+	// for area, fee := range fees {
+	// 	fmt.Println(area, fee)
+	// }
 
 	// for _, p := range prices{
 	// 	subtotal += p
 	// }
+
+	var feeSantim int
+	var subtotal int
+	var fee int
+
+	switch area {
+	case "Bole":
+		feeSantim = 3000
+	case "Megenagna":
+		feeSantim = 4500
+	case "Addis Ababa", "Yod Abyssinia":
+		feeSantim = 2500
+	default:
+		feeSantim = 5000
+	}
+
+	switch {
+	case subtotal >= 50000:
+		fee = 0
+	case subtotal >= 30000:
+		fee = 2000
+	default:
+		fee = 5000
+	}
+
+	fmt.Println("Delivery Fee in Santim:", feeSantim)
+	fmt.Println("Order Fee in Santim:", fee)
 
 }
 
