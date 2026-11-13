@@ -1,6 +1,9 @@
 package main
 
-import "golang.org/x/tools/go/analysis/passes/nilfunc"
+import (
+	"errors"
+	"fmt"
+)
 
 // func test(param1 int) (int, string) {
 // 	var err string
@@ -10,7 +13,34 @@ import "golang.org/x/tools/go/analysis/passes/nilfunc"
 // 	return param1, err
 // }
 
+func printName(name ...string) (string, error) {
+	fmt.Println(name)
+	if name[0] == "" {
+		return "", errors.New("name is non")
+	}
+	return name[0], nil
+}
+
 func main() {
+
+	result, err := printName("check1", "check2")
+	fmt.Println(result, err)
+
+	type Person struct {
+		Name  string
+		Phone bool
+	}
+
+	type Courier struct {
+		Person
+		Vechicle string
+	}
+
+	c := Courier{Person{"Its Me", true}, "Check point"}
+
+	fmt.Println(c.Name)
+	fmt.Println(c.Person.Name)
+
 	// _, err := test(100)
 
 	// x := 100
@@ -117,65 +147,73 @@ func main() {
 	// fmt.Println("Delivery Fee in Santim:", feeSantim)
 	// fmt.Println("Order Fee in Santim:", fee)
 
+	// func serviceFeeSantim(subtotal int) int {
+	// 	return int(float64(subtotal) * 0.05)
+	// }
+
+	// func lineTotal(priceSantim, qty int) int {
+	// 	return priceSantim * qty
+	// }
+
+	// func TotalSantim(subtotal, fee, delivery int) int {
+	// 	return subtotal + fee + delivery
+	// }
+
+	// func deliveryFeeSantim(area string) int {
+	// 	switch area {
+	// 	case "Bole":
+	// 		return 3000, nil
+	// 	case "Kasanchis":
+	// 		return 3500, nil
+	// 	}
+	// 	// return 0, fmt.Errorf("unserved area %q", area)
+	// 	return int(0)
+	// }
+
+	// fee, err := deliveryFeeSantim("Ayat")
+
+	// if err != nil{
+	// 	return
+	// } else if fee != nil {
+
+	// }
+
+	// func sumSantim(amounts ...int) int {
+	// 	total := 0
+	// 	for _, a := range amounts {
+	// 		total += 0
+	// 	}
+	// 	return total
+	// }
+
+	// func main() {
+
+	// 	var name string = "Hello, World!"
+	// 	var age int = 30
+
+	// 	address := "Addis Ababa, Ethiopia"
+
+	// 	var (
+	// 		name    string = "John Doe"
+	// 		age     int    = 25
+	// 		address string = "addis ababa, Ethiopia"
+	// 	)
+
+	// 	type addressType string
+
+	// 	const (
+	// 		User int = iota
+	// 		Editor
+	// 		Admin
+	// 	)
+
+	// 	fmt.Println("Your name is:", name)
+	// 	fmt.Println("your age is:", age)
+	// 	fmt.Println("and your address is:", address)
+	// 	fmt.Println("Your name is:", name)
+	// 	fmt.Println("Your role is:", User)
+	// 	fmt.Println("My Statuse:", name)
+	// 	fmt.Println("My Statuse:", age)
+	// 	fmt.Println("My Statuse:", address)
+	// }
 }
-
-func serviceFeeSantim(subtotal int) int {
-	return int(float64(subtotal) * 0.05)
-}
-
-func lineTotal(priceSantim, qty int) int {
-	return priceSantim * qty
-}
-
-func TotalSantim(subtotal, fee, delivery int) int {
-	return subtotal + fee + delivery
-}
-
-func deliveryFeeSantim(area string) int {
-	switch area {
-	case "Bole":
-		return 3000, nil
-	case "Kasanchis":
-		return 3500, nil
-	}
-	return 0, fmt.Errorf("unserved area %q", area)
-}
-
-fee, err := deliveryFeeSantim("Ayat")
-
-if err != nil{
-	return
-} else if fee != nil {
-
-}
-
-// func main() {
-
-// 	var name string = "Hello, World!"
-// 	var age int = 30
-
-// 	address := "Addis Ababa, Ethiopia"
-
-// 	var (
-// 		name    string = "John Doe"
-// 		age     int    = 25
-// 		address string = "addis ababa, Ethiopia"
-// 	)
-
-// 	type addressType string
-
-// 	const (
-// 		User int = iota
-// 		Editor
-// 		Admin
-// 	)
-
-// 	fmt.Println("Your name is:", name)
-// 	fmt.Println("your age is:", age)
-// 	fmt.Println("and your address is:", address)
-// 	fmt.Println("Your name is:", name)
-// 	fmt.Println("Your role is:", User)
-// 	fmt.Println("My Statuse:", name)
-// 	fmt.Println("My Statuse:", age)
-// 	fmt.Println("My Statuse:", address)
-// }
