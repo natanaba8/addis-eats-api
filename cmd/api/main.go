@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // func test(param1 int) (int, string) {
 // 	var err string
 // 	if param1%2 != 0 {
@@ -23,17 +21,17 @@ func main() {
 	// result, err := test(y)
 	// fmt.Println("Result:", result, "Error:", err)
 
-	var restaurant string = "Yod Abyssinia"
-	var area = "Bole"
-	var priceSantim int
+	// var restaurant string = "Yod Abyssinia"
+	// var area = "Bole"
+	// var priceSantim int
 
-	courier := "dawit tesfaye"
-	order, revenue := 12, 84500
+	// courier := "dawit tesfaye"
+	// order, revenue := 12, 84500
 
-	var (
-		city     = "Addis Ababa"
-		currency = "ETB"
-	)
+	// var (
+	// 	city     = "Addis Ababa"
+	// 	currency = "ETB"
+	// )
 
 	// var order struct {
 	// 	TotalSantim int
@@ -41,14 +39,14 @@ func main() {
 	// 	Note        string
 	// }
 
-	fmt.Println("Restaurant:", restaurant)
-	fmt.Println("Area:", area)
-	fmt.Println("Price in Santim:", priceSantim)
-	fmt.Println("Courier:", courier)
-	fmt.Println("Order:", order)
-	fmt.Println("Revenue:", revenue)
-	fmt.Println("City:", city)
-	fmt.Println("Currency:", currency)
+	// fmt.Println("Restaurant:", restaurant)
+	// fmt.Println("Area:", area)
+	// fmt.Println("Price in Santim:", priceSantim)
+	// fmt.Println("Courier:", courier)
+	// fmt.Println("Order:", order)
+	// fmt.Println("Revenue:", revenue)
+	// fmt.Println("City:", city)
+	// fmt.Println("Currency:", currency)
 	// fmt.Println("*************")
 	// fmt.Println("Total Santim: ", order)
 
@@ -90,33 +88,45 @@ func main() {
 	// 	subtotal += p
 	// }
 
-	var feeSantim int
-	var subtotal int
-	var fee int
+	// var feeSantim int
+	// var subtotal int
+	// var fee int
 
-	switch area {
-	case "Bole":
-		feeSantim = 3000
-	case "Megenagna":
-		feeSantim = 4500
-	case "Addis Ababa", "Yod Abyssinia":
-		feeSantim = 2500
-	default:
-		feeSantim = 5000
-	}
+	// switch area {
+	// case "Bole":
+	// 	feeSantim = 3000
+	// case "Megenagna":
+	// 	feeSantim = 4500
+	// case "Addis Ababa", "Yod Abyssinia":
+	// 	feeSantim = 2500
+	// default:
+	//	feeSantim = 5000
+	//}
 
-	switch {
-	case subtotal >= 50000:
-		fee = 0
-	case subtotal >= 30000:
-		fee = 2000
-	default:
-		fee = 5000
-	}
+	// switch {
+	// case subtotal >= 50000:
+	// 	fee = 0
+	// case subtotal >= 30000:
+	// 	fee = 2000
+	// default:
+	// 	fee = 5000
+	// }
 
-	fmt.Println("Delivery Fee in Santim:", feeSantim)
-	fmt.Println("Order Fee in Santim:", fee)
+	// fmt.Println("Delivery Fee in Santim:", feeSantim)
+	// fmt.Println("Order Fee in Santim:", fee)
 
+}
+
+func serviceFeeSantim(subtotal int) int {
+	return int(float64(subtotal) * 0.05)
+}
+
+func lineTotal(priceSantim, qty int) int {
+	return priceSantim * qty
+}
+
+func TotalSantim(subtotal, fee, delivery int) int {
+	return subtotal + fee + delivery
 }
 
 // func main() {
