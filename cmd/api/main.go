@@ -1,5 +1,7 @@
 package main
 
+import "golang.org/x/tools/go/analysis/passes/nilfunc"
+
 // func test(param1 int) (int, string) {
 // 	var err string
 // 	if param1%2 != 0 {
@@ -127,6 +129,24 @@ func lineTotal(priceSantim, qty int) int {
 
 func TotalSantim(subtotal, fee, delivery int) int {
 	return subtotal + fee + delivery
+}
+
+func deliveryFeeSantim(area string) int {
+	switch area {
+	case "Bole":
+		return 3000, nil
+	case "Kasanchis":
+		return 3500, nil
+	}
+	return 0, fmt.Errorf("unserved area %q", area)
+}
+
+fee, err := deliveryFeeSantim("Ayat")
+
+if err != nil{
+	return
+} else if fee != nil {
+
 }
 
 // func main() {
